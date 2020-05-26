@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Mathematicator\Integral\Test;
+namespace Mathematicator\Integral\Tests;
 
 
-use App\Booting;
 use Mathematicator\Integral\IntegralSolver;
+use Nette\DI\Container;
 use Tester\Assert;
 use Tester\TestCase;
 
-require __DIR__ . '/../../../autoload.php';
+require __DIR__ . '/../bootstrap.php';
 
 class IntegralSolverTest extends TestCase
 {
@@ -19,12 +19,9 @@ class IntegralSolverTest extends TestCase
 	private $integralSolver;
 
 
-	/**
-	 * @param IntegralSolver $integralSolver
-	 */
-	public function __construct(IntegralSolver $integralSolver)
+	public function __construct(Container $container)
 	{
-		$this->integralSolver = $integralSolver;
+		$this->integralSolver = $container->getByType(IntegralSolver::class);
 	}
 
 
@@ -45,7 +42,7 @@ class IntegralSolverTest extends TestCase
 	public function getQueries(): array
 	{
 		return [
-			['0', 'c'],
+			['0', '+c'],
 			['1', 'x+c'],
 			['12', '12x+c'],
 			['x', '(x^2)/2+c'],
@@ -54,10 +51,4 @@ class IntegralSolverTest extends TestCase
 	}
 }
 
-if (isset($_SERVER['NETTE_TESTER_RUNNER'])) {
-	$di = Booting::bootForTests()->createContainer();
-
-	(new IntegralSolverTest(
-		$di->getByType(IntegralSolver::class)
-	))->run();
-}
+(new IntegralSolverTest(Bootstrap::boot()))->run();
