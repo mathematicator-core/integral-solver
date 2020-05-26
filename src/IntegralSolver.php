@@ -208,6 +208,6 @@ class IntegralSolver
 			return $preferenceDifferential;
 		}
 
-		return $variables === [] ? 'x' : array_keys($variables)[0];
+		return (string) ($variables === [] ? 'x' : array_keys($variables)[0]);
 	}
 }
