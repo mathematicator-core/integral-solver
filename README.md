@@ -2,7 +2,7 @@ Robust PHP math integral solver
 ===============================
 
 [![Integrity check](https://github.com/mathematicator-core/integral-solver/workflows/Integrity%20check/badge.svg)](https://github.com/mathematicator-core/integral-solver/actions?query=workflow%3A%22Integrity+check%22)
-[![codecov](https://codecov.io/gh/mathematicator-core/engine/branch/master/graph/badge.svg)](https://codecov.io/gh/mathematicator-core/engine)
+[![codecov](https://codecov.io/gh/mathematicator-core/integral-solver/branch/master/graph/badge.svg)](https://codecov.io/gh/mathematicator-core/integral-solver)
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](./LICENSE)
 
 Get instance of `IntegralSolver` and compute:
