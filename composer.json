@@ -23,7 +23,7 @@
 		"mathematicator-core/numbers": "^2.0@dev"
 	},
 	"require-dev": {
-		"brainmaestro/composer-git-hooks": "^2.8",
+		"brainmaestro/composer-git-hooks": "dev-master",
 		"nette/bootstrap": "^3.0",
 		"nette/tester": "^2.3",
 		"phpstan/phpstan": "^0.12.18",
