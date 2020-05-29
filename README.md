@@ -1,10 +1,26 @@
-Robust PHP math integral solver
-===============================
+<h1 align="center">
+    PHP Math Integral Solver
+</h1>
+
+<p align="center">
+    <a href="https://mathematicator.com" target="_blank">
+        <img src="https://avatars3.githubusercontent.com/u/44620375?s=100&v=4">
+    </a>
+</p>
 
 [![Integrity check](https://github.com/mathematicator-core/integral-solver/workflows/Integrity%20check/badge.svg)](https://github.com/mathematicator-core/integral-solver/actions?query=workflow%3A%22Integrity+check%22)
 [![codecov](https://codecov.io/gh/mathematicator-core/integral-solver/branch/master/graph/badge.svg)](https://codecov.io/gh/mathematicator-core/integral-solver)
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](./LICENSE)
+[![PHPStan Enabled](https://img.shields.io/badge/PHPStan-enabled%20L8-brightgreen.svg?style=flat)](https://phpstan.org/)
 
+
+## Installation
+
+```
+composer require mathematicator-core/calculator
+```
+
+## Usage
 Get instance of `IntegralSolver` and compute:
 
 ```php
@@ -20,8 +36,7 @@ All dependencies you can get by [Package manager](https://github.com/baraja-core
 
 Fully compatible with `Nette 3.0` and `PHP 7.2`.
 
-Contribution
-----
+## Contribution
 
 ### Tests
 

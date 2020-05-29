@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Mathematicator\Integral\Solver;
 
 
-use Mathematicator\Engine\MathematicatorException;
+use Mathematicator\Engine\Exception\MathematicatorException;
 use Mathematicator\Integral\Exception\CanNotSolveException;
 use Mathematicator\Tokenizer\Token\IToken;
 use Mathematicator\Tokenizer\Token\NumberToken;

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Mathematicator\Integral\Exception;
 
 
-use Mathematicator\Engine\MathematicatorException;
+use Mathematicator\Engine\Exception\MathematicatorException;
 use Mathematicator\Tokenizer\Token\IToken;
 use Mathematicator\Tokenizer\Token\SubToken;
 
