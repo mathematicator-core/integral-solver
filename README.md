@@ -99,6 +99,9 @@ one to the most abstract one:
             <b>
             <a href="https://github.com/mathematicator-core/integral-solver">
                 Integral Solver
+            </a>,
+            <a href="https://github.com/mathematicator-core/statistic">
+                Statistics
             </a>
             </b>
         </td>
