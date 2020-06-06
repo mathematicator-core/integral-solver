@@ -10,7 +10,7 @@ use Nette\DI\Container;
 use Tester\Assert;
 use Tester\TestCase;
 
-require __DIR__ . '/../bootstrap.php';
+require __DIR__ . '/../Bootstrap.php';
 
 class IntegralSolverTest extends TestCase
 {

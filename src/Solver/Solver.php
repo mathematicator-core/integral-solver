@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Mathematicator\Integral\Solver;
 
 
-use Mathematicator\Engine\MathematicatorException;
+use Mathematicator\Engine\Exception\MathematicatorException;
 use Mathematicator\Integral\Exception\CanNotSolveException;
 use Mathematicator\Tokenizer\Token\IToken;
 use Mathematicator\Tokenizer\Token\NumberToken;
@@ -40,14 +40,14 @@ class Solver
 	{
 		if ($token instanceof NumberToken) {
 			if ($token->getToken() !== '0') {
-				return ($num = $token->getNumber()->getHumanString()) === '1' ? 'x' : $num . 'x';
+				return ($num = (string) $token->getNumber()) === '1' ? 'x' : $num . 'x';
 			}
 
 			return '';
 		}
 
 		if ($token instanceof VariableToken) {
-			if (($times = $token->getTimes()->getHumanString()) === '1') {
+			if (($times = (string) $token->getTimes()) === '1') {
 				return '(x^2)/2';
 			}
 
