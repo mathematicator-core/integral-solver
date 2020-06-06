@@ -1,6 +1,0 @@
-services:
-	- Mathematicator\Tokenizer\Tokenizer
-	- Mathematicator\Engine\QueryNormalizer
-	- Mathematicator\Tokenizer\TokensToLatex
-	- Mathematicator\Tokenizer\TokensToObject
-	- Mathematicator\Numbers\NumberFactory
