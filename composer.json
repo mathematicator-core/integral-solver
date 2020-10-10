@@ -18,9 +18,9 @@
 	],
 	"require": {
 		"php": ">=7.2",
-		"mathematicator-core/tokenizer": "^2.2@dev",
-		"mathematicator-core/engine": "^2.2@dev",
-		"mathematicator-core/numbers": "^2.2@dev"
+		"mathematicator-core/tokenizer": "^2.1",
+		"mathematicator-core/engine": "^2.0",
+		"mathematicator-core/numbers": "^2.1"
 	},
 	"require-dev": {
 		"brainmaestro/composer-git-hooks": "dev-master",
