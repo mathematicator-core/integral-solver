@@ -32,8 +32,6 @@ class Solver
 
 
 	/**
-	 * @param IToken $token
-	 * @return string
 	 * @throws CanNotSolveException
 	 */
 	private function solvePrimitiveIntegral(IToken $token): string
@@ -45,7 +43,6 @@ class Solver
 
 			return '';
 		}
-
 		if ($token instanceof VariableToken) {
 			if (($times = (string) $token->getTimes()) === '1') {
 				return '(x^2)/2';
