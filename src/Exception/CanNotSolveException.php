@@ -14,7 +14,6 @@ class CanNotSolveException extends MathematicatorException
 
 	/**
 	 * @param IToken[] $tokens
-	 * @param int $level
 	 * @throws CanNotSolveException
 	 */
 	public static function canNotSolve(array $tokens, int $level = 0): void
@@ -23,7 +22,6 @@ class CanNotSolveException extends MathematicatorException
 		if ($level === 0) {
 			$buffer = '';
 		}
-
 		foreach ($tokens as $token) {
 			$buffer .= $token->getToken();
 			if ($token instanceof SubToken) {
@@ -31,7 +29,6 @@ class CanNotSolveException extends MathematicatorException
 				$buffer .= ')';
 			}
 		}
-
 		if ($level > 0) {
 			return;
 		}
@@ -41,7 +38,6 @@ class CanNotSolveException extends MathematicatorException
 
 
 	/**
-	 * @param string $function
 	 * @throws CanNotSolveException
 	 */
 	public static function notImplemented(string $function): void

@@ -41,11 +41,6 @@ class IntegralSolver
 	private $solver;
 
 
-	/**
-	 * @param Tokenizer $tokenizer
-	 * @param QueryNormalizer $queryNormalizer
-	 * @param Solver $solver
-	 */
 	public function __construct(Tokenizer $tokenizer, QueryNormalizer $queryNormalizer, Solver $solver)
 	{
 		$this->tokenizer = $tokenizer;
@@ -55,9 +50,6 @@ class IntegralSolver
 
 
 	/**
-	 * @param string $query
-	 * @param string|null $differential
-	 * @return IntegralResult
 	 * @throws MathematicatorException|Exception
 	 */
 	public function process(string $query, ?string $differential = null): IntegralResult
@@ -74,7 +66,6 @@ class IntegralSolver
 
 	/**
 	 * @param IToken[] $tokens
-	 * @param string|null $differential
 	 * @return IntegralResult
 	 * @throws MathematicatorException
 	 */
@@ -134,10 +125,6 @@ class IntegralSolver
 	}
 
 
-	/**
-	 * @param IRule $rule
-	 * @return IntegralSolver
-	 */
 	public function addRule(IRule $rule): self
 	{
 		$this->rules[] = $rule;
@@ -161,7 +148,6 @@ class IntegralSolver
 			if ($buffer === [] || $buffering === true) { // Start buffering
 				$buffering = true;
 			}
-
 			if ($token instanceof OperatorToken && \in_array($token->getToken(), ['+', '-'], true) === true) {
 				$parts[] = $buffer;
 				$partOperators[] = $token->getToken();
@@ -171,7 +157,6 @@ class IntegralSolver
 				$buffer[] = $token;
 			}
 		}
-
 		if ($buffering === true) {
 			$parts[] = $buffer;
 			$partOperators[] = '';
@@ -186,8 +171,6 @@ class IntegralSolver
 
 	/**
 	 * @param IToken[] $tokens
-	 * @param string|null $preferenceDifferential
-	 * @param int $level
 	 * @return string
 	 */
 	private function resolveDifferential(array $tokens, ?string $preferenceDifferential = null, int $level = 0): string
@@ -203,7 +186,6 @@ class IntegralSolver
 				$this->resolveDifferential($token->getTokens(), $preferenceDifferential, $level + 1);
 			}
 		}
-
 		if (isset($variables[$preferenceDifferential])) {
 			return $preferenceDifferential;
 		}

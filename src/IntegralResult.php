@@ -32,9 +32,6 @@ final class IntegralResult
 
 	/**
 	 * @param IToken[] $queryTokens
-	 * @param string $queryLaTeX
-	 * @param string $differential
-	 * @param bool $singleToken
 	 */
 	public function __construct(array $queryTokens, string $queryLaTeX, string $differential, bool $singleToken)
 	{
@@ -45,18 +42,12 @@ final class IntegralResult
 	}
 
 
-	/**
-	 * @return bool
-	 */
 	public function isFinalResult(): bool
 	{
 		return strpos($this->getResult(), '?') === false;
 	}
 
 
-	/**
-	 * @return string
-	 */
 	public function getResult(): string
 	{
 		return $this->result ?? '';
@@ -65,7 +56,6 @@ final class IntegralResult
 
 	/**
 	 * @internal
-	 * @param string $result
 	 */
 	public function setResult(string $result): void
 	{
@@ -73,18 +63,12 @@ final class IntegralResult
 	}
 
 
-	/**
-	 * @return string
-	 */
 	public function getDifferential(): string
 	{
 		return $this->differential;
 	}
 
 
-	/**
-	 * @return bool
-	 */
 	public function isSingleToken(): bool
 	{
 		return $this->singleToken;
@@ -100,9 +84,6 @@ final class IntegralResult
 	}
 
 
-	/**
-	 * @return string
-	 */
 	public function getQueryLaTeX(): string
 	{
 		return '\int '
@@ -120,10 +101,6 @@ final class IntegralResult
 	}
 
 
-	/**
-	 * @param Step $step
-	 * @return IntegralResult
-	 */
 	public function addStep(Step $step): self
 	{
 		$this->steps[] = $step;

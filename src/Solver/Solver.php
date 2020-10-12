@@ -11,7 +11,7 @@ use Mathematicator\Tokenizer\Token\IToken;
 use Mathematicator\Tokenizer\Token\NumberToken;
 use Mathematicator\Tokenizer\Token\VariableToken;
 
-class Solver
+final class Solver
 {
 
 	/**
