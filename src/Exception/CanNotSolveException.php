@@ -11,7 +11,6 @@ use Mathematicator\Tokenizer\Token\SubToken;
 
 class CanNotSolveException extends MathematicatorException
 {
-
 	/**
 	 * @param IToken[] $tokens
 	 * @throws CanNotSolveException

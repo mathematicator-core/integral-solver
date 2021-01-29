@@ -13,7 +13,6 @@ use Mathematicator\Tokenizer\Token\VariableToken;
 
 final class Solver
 {
-
 	/**
 	 * @param IToken[] $tokens
 	 * @return string
