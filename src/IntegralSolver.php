@@ -52,8 +52,8 @@ class IntegralSolver
 	{
 		$tokens = $this->tokenizer->tokensToObject(
 			$this->tokenizer->tokenize(
-				$this->queryNormalizer->normalize($query)
-			)
+				$this->queryNormalizer->normalize($query),
+			),
 		);
 
 		return $this->processByTokens($tokens, $differential);
@@ -73,7 +73,7 @@ class IntegralSolver
 			$tokens,
 			$this->tokenizer->tokensToLatex($tokens),
 			$differential,
-			\count($explode['parts']) === 1
+			\count($explode['parts']) === 1,
 		);
 
 		$result->addStep(new Step('Vezměte integrál', $result->getQueryLaTeX()));
@@ -96,7 +96,7 @@ class IntegralSolver
 			$result->addStep(new Step(
 				'Rozdělte integrál na části',
 				'= ' . $stepParts,
-				'Základní věta algebry říká, že lze součet integrálů rozdělit na skupinu menších problémů a ty řešit samostatně.'
+				'Základní věta algebry říká, že lze součet integrálů rozdělit na skupinu menších problémů a ty řešit samostatně.',
 			));
 		}
 
@@ -171,7 +171,7 @@ class IntegralSolver
 	{
 		static $variables = [];
 		$variables = $level === 0 ? [] : $variables;
-		$preferenceDifferential = $preferenceDifferential ?? 'x';
+		$preferenceDifferential ??= 'x';
 
 		foreach ($tokens as $token) {
 			if ($token instanceof VariableToken) {
