@@ -46,7 +46,7 @@ class IntegralSolver
 
 
 	/**
-	 * @throws MathematicatorException|Exception
+	 * @throws MathematicatorException
 	 */
 	public function process(string $query, ?string $differential = null): IntegralResult
 	{
