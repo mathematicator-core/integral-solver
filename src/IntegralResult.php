@@ -12,22 +12,18 @@ final class IntegralResult
 {
 
 	/** @var IToken[] */
-	private $queryTokens;
+	private array $queryTokens;
 
-	/** @var string */
-	private $queryLaTeX;
+	private string $queryLaTeX;
 
-	/** @var string|null */
-	private $result;
+	private ?string $result = null;
 
-	/** @var string */
-	private $differential;
+	private string $differential;
 
-	/** @var bool */
-	private $singleToken;
+	private bool $singleToken;
 
 	/** @var Step[] */
-	private $steps = [];
+	private array $steps = [];
 
 
 	/**
@@ -44,7 +40,7 @@ final class IntegralResult
 
 	public function isFinalResult(): bool
 	{
-		return strpos($this->getResult(), '?') === false;
+		return str_contains($this->getResult(), '?') === false;
 	}
 
 

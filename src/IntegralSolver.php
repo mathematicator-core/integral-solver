@@ -16,7 +16,6 @@ use Mathematicator\Tokenizer\Token\OperatorToken;
 use Mathematicator\Tokenizer\Token\SubToken;
 use Mathematicator\Tokenizer\Token\VariableToken;
 use Mathematicator\Tokenizer\Tokenizer;
-use Nette\Tokenizer\Exception;
 
 /**
  * This class is user interface for call inner integral logic.
@@ -29,16 +28,13 @@ class IntegralSolver
 {
 
 	/** @var IRule[] */
-	public $rules = [];
+	public array $rules = [];
 
-	/** @var Tokenizer */
-	private $tokenizer;
+	private Tokenizer $tokenizer;
 
-	/** @var QueryNormalizer */
-	private $queryNormalizer;
+	private QueryNormalizer $queryNormalizer;
 
-	/** @var Solver */
-	private $solver;
+	private Solver $solver;
 
 
 	public function __construct(Tokenizer $tokenizer, QueryNormalizer $queryNormalizer, Solver $solver)
@@ -66,7 +62,6 @@ class IntegralSolver
 
 	/**
 	 * @param IToken[] $tokens
-	 * @return IntegralResult
 	 * @throws MathematicatorException
 	 */
 	public function processByTokens(array $tokens, ?string $differential = null): IntegralResult
@@ -117,7 +112,7 @@ class IntegralSolver
 			} else {
 				$result->addStep(new Step('Přibližné řešení', $resultLaTeX, 'Nepodařilo se najít primitivní funkci, řešení je zobrazeno přibližně.'));
 			}
-		} catch (Exception $e) {
+		} catch (\Throwable) {
 			$result->addStep(new Step('Řešení', null, 'Řešení se nepodařilo vykreslit.'));
 		}
 
@@ -171,7 +166,6 @@ class IntegralSolver
 
 	/**
 	 * @param IToken[] $tokens
-	 * @return string
 	 */
 	private function resolveDifferential(array $tokens, ?string $preferenceDifferential = null, int $level = 0): string
 	{

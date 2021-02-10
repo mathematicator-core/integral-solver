@@ -15,7 +15,6 @@ final class Solver
 {
 	/**
 	 * @param IToken[] $tokens
-	 * @return string
 	 * @throws CanNotSolveException|MathematicatorException
 	 */
 	public function solvePart(array $tokens): string
