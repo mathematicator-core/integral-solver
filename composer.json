@@ -18,7 +18,7 @@
 	],
 	"require": {
 		"php": "^8.0",
-		"mathematicator-core/tokenizer": "^2.1",
+		"mathematicator-core/tokenizer": "^2.1 || ^3.0",
 		"mathematicator-core/engine": "^2.0 || ^3.0",
 		"mathematicator-core/numbers": "^2.1"
 	},
